@@ -6,18 +6,21 @@ import HomePage from './components/HomePage.jsx';
 import TshirtCard from './components/TshirtCard';
 import tshirtsData from './tshirtsData';
 
+import PantsCard from './components/PantsCard.jsx';
+import HorizontalScroll from './components/HorizontalScroll.jsx';
+import pantsData from './pantsData.jsx';
+
 import ShoeCard from './components/ShoeCard';
 import shoesData from './shoesData';
 
 import Footer from './components/Footer.jsx';
 
+
 const App = () => {
   return (
     <>
-   
+
       {/* Add your other content here */}
-
-
 
 
       <div>
@@ -41,8 +44,15 @@ const App = () => {
 
 
 
-
-
+      {/* PantsSection */}
+      <div className="container mx-auto p-4">
+        <h1 className="text-3xl font-semibold mb-4">Pants Collection</h1>
+        <HorizontalScroll>
+          {pantsData.map((pant, index) => (
+            <PantsCard key={index} pant={pant} />
+          ))}
+        </HorizontalScroll>
+      </div>
 
 
       {/* shoes */}
