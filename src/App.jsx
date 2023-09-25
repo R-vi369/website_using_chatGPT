@@ -1,6 +1,6 @@
 import React from 'react'
  
-import Carousel from './components/Carousel.jsx'
+
  
 import HomePage from './components/HomePage.jsx';
 
@@ -18,21 +18,9 @@ import Footer from './components/Footer.jsx';
 
 
 const App = () => {
-  const images = [
-    'https://5.imimg.com/data5/XO/AE/MY-39077357/mens-check-shirts.jpg',
-    'https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300928873NAVY_1.jpg?v=1676451101',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVk8Ol6djKcrUfjvbee7s714wKAIKapRy07w&usqp=CAU',
-    // Add more image URLs here
-  ];
+  
   return (
     <>
-
-      {/* Add your other content here */}
-      <div>
-      {/* Other product information */}
-      <Carousel images={images} />
-      {/* Other product information */}
-    </div>
 
       <div>
         <HomePage />

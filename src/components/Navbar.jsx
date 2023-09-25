@@ -1,65 +1,44 @@
-// src/components/Navbar.js
-
 import React, { useState } from 'react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className=" p-4 z-10 fixed w-full">
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <h1 className="text-2xl font-semibold text-white">YourDukaan</h1>
-        </div>
+    <nav className="">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <a href="/" className="text-2xl font-semibold text-white hover:text-white cursor-pointer">
+            YourLogo
+          </a>
 
-        <div className="md:hidden">
+          {/* Mobile Menu Button */}
           <button
+            className="lg:hidden block text-white hover:text-gray-800 focus:outline-none"
             onClick={toggleMenu}
-            className="text-white hover:text-gray-200 focus:outline-none"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`} />
           </button>
-        </div>
 
-        <div className={`md:flex ${isOpen ? 'block' : 'hidden'} mt-4 md:mt-0`}>
-          <a href="/Home" className="block md:inline-block text-white hover:text-gray-200 mr-4">
-            Home
-          </a>
-          <a href="#" className="block md:inline-block text-white hover:text-gray-200 mr-4">
-            About
-          </a>
-          <a href="#" className="block md:inline-block text-white hover:text-gray-200 mr-4">
-            Services
-          </a>
-          <a href="#" className="block md:inline-block text-white hover:text-gray-200">
-            Contact
-          </a>
+          {/* Navigation Links */}
+          <div className={`lg:flex lg:space-x-4 ${isMenuOpen ? 'block' : 'hidden'}`}>
+            <a href="#" className="text-white hover:text-gray-800">
+              Shop
+            </a>
+            <a href="#" className="text-gray-600 hover:text-black">
+              Categories
+            </a>
+            <a href="#" className="text-gray-600 hover:text-gray-800">
+              About Us
+            </a>
+            <a href="#" className="text-gray-600 hover:text-gray-800">
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </nav>

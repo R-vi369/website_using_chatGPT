@@ -4,7 +4,7 @@ import React from 'react';
 
 const TshirtCard = ({ tshirt }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg center">
       <img src={tshirt.image} alt={tshirt.name} className="w-full" />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{tshirt.name}</div>
